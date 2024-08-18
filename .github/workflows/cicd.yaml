@@ -27,10 +27,3 @@ jobs:
               uses: SonarSource/sonarcloud-github-action@master
               env:
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            
-            - name: Analyze with SonarCloud
-              uses: SonarSource/sonarcloud-github-action@master # Ex: v2.1.0, See the latest version at https://github.com/marketplace/actions/sonarcloud-scan
-              with:
-                args: >
-                  -Dsonar.organization=syabilsncs
-                  -Dsonar.projectKey=SyabilS_movieapp
