@@ -18,7 +18,7 @@ jobs:
                 dotnet-version: '8.0.x'
             
             - name: Restore dependencies
-              run: dotnet restore
+              run: dotnet restore MovieApp.csproj
             
             - name: Build App
-              run: dotnet build -c Release --no-restore
+              run: dotnet build MovieApp.csproj -c Release --no-restore
