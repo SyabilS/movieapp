@@ -27,5 +27,5 @@ jobs:
               uses: SonarSource/sonarcloud-github-action@master
               env:
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-                sonar-project-key: 'SyabilS_movieapp'
-                sonar-org-key: 'syabilsncs'
+                sonar.ProjectKey: 'SyabilS_movieapp'
+                sonar.organization: 'syabilsncs'
