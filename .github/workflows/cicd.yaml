@@ -27,13 +27,3 @@ jobs:
               uses: SonarSource/sonarcloud-github-action@master
               env:
                 SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-            # Build the Docker image using the Dockerfile in your repository
-            - name: Build Docker image
-              run: |
-                docker build -t movie-app -f ./Dockerfile .
-
-            # Run the Docker container
-            - name: Run Docker container
-              run: |
-                docker run movie-app
