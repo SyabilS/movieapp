@@ -37,10 +37,9 @@ jobs:
                   # Setup SSH key
                   echo "echoing private key"
                   mkdir -p ~/.ssh
-                  echo "${{ secrets.EC2_SSH_KEY }}"
                   echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa
-                  chmod 600 ~/.ssh/id_rsa
                   cat ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
 
                   # Connect to EC2 and deploy
                   ssh -i ~/.ssh/id_rsa -o "StrictHostKeyChecking no" $EC2_USER@$EC2_HOST << 'EOF'
