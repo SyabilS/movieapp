@@ -42,7 +42,7 @@ jobs:
                   chmod 600 ~/.ssh/id_rsa
 
                   # Connect to EC2 and deploy
-                  ssh -i ~/.ssh/id_rsa $EC2_USER@$EC2_HOST
+                  ssh -i ~/.ssh/id_rsa StrictHostKeyChecking=no $EC2_USER@$EC2_HOST
                     # Check if Docker is installed
                     if ! command -v docker &> /dev/null
                     then
