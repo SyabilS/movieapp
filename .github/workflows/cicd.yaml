@@ -81,4 +81,4 @@ jobs:
                       docker rm movieapp || true
 
                       # Run the new container
-                      docker run -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -d --name movieapp -p 8080:8081 ${{ secrets.DOCKERHUB_USERNAME }}/movieapp:latest
+                      docker run -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -d --name movieapp -p 8080:8080 -p 8081:8081 ${{ secrets.DOCKERHUB_USERNAME }}/movieapp:latest
