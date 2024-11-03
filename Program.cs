@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using MovieApp.Controllers;
 using MovieApp.Data;
 using MovieApp.Services;
+using MovieApp.Interfaces;
 using MovieApp.Models;
 using Microsoft.Extensions.DependencyInjection;
 using MovieApp.Manager;
@@ -64,11 +65,11 @@ var configuration = builder.Configuration;
 
 // Update the specific section with the fetched secret
 var databaseConnectionSection = configuration.GetSection("ConnectionStrings");
-var connectionString = databaseSecrets["DefaultConnection"]; 
+var connectionString = databaseSecrets["DefaultConnection"];
 databaseConnectionSection["DefaultConnection"] = connectionString;
 
 var tmdbSettingsSection = configuration.GetSection("TmdbSettings");
-var apiKey = movieApiSecrets["ApiKey"]; 
+var apiKey = movieApiSecrets["ApiKey"];
 tmdbSettingsSection["ApiKey"] = apiKey;
 
 // ======   END AWS CONFIGS     ======
@@ -89,6 +90,7 @@ builder.Services.AddRazorPages(options =>
 builder.Services.Configure<TmdbSettings>(builder.Configuration.GetSection("TmdbSettings"));
 builder.Services.AddHttpClient<MovieService>();
 builder.Services.AddScoped<MovieService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<ApplicationUserManager>();
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
