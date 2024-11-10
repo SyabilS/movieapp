@@ -30,14 +30,14 @@
         <button type="submit" class="btn btn-primary mb-2">Search</button>
     </form>
     <div class="form-group">
-        <label>Sort by:</label>
-        <div class="btn-group" role="group">
+        <span>Sort by:</span>
+        <fieldset class="btn-group" role="group">
             <a class="btn btn-secondary" asp-action="Index" asp-route-searchString="@currentFilter" asp-route-sortOrder="title_desc">Title (Desc)</a>
             <a class="btn btn-secondary" asp-action="Index" asp-route-searchString="@currentFilter" asp-route-sortOrder="release_asc">Release Date (Asc)</a>
             <a class="btn btn-secondary" asp-action="Index" asp-route-searchString="@currentFilter" asp-route-sortOrder="release_desc">Release Date (Desc)</a>
             <a class="btn btn-secondary" asp-action="Index" asp-route-searchString="@currentFilter" asp-route-sortOrder="rating_asc">Rating (Asc)</a>
             <a class="btn btn-secondary" asp-action="Index" asp-route-searchString="@currentFilter" asp-route-sortOrder="rating_desc">Rating (Desc)</a>
-        </div>
+        </fieldset>
     </div>
 
 <table class="table" id="movietable">
