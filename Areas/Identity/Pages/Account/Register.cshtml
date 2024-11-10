@@ -8,7 +8,7 @@
 
 
 <div class="register-container">
-    <img src="~/images/HeroSection.png" class="hero-image" />
+    <img src="~/images/HeroSection.png" class="hero-image" alt=""/>
     <h1>@ViewData["Title"]</h1>
     <div class="row">
         <div class="col-md-4">
@@ -17,23 +17,23 @@
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.PreferredName" class="form-control" autocomplete="preferredname" aria-required="true" placeholder="YourName" />
-                    <label asp-for="Input.PreferredName">Preferred Name</label>
+                    <input asp-for="Input.PreferredName" class="form-control" autocomplete="off" aria-required="true" placeholder="YourName" />
+                    <label asp-for="Input.PreferredName" htmlFor="Input.PreferredName">Preferred Name</label>
                     <span asp-validation-for="Input.PreferredName" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
-                    <label asp-for="Input.Email">Email</label>
+                    <input asp-for="Input.Email" class="form-control" autocomplete="off" aria-required="true" placeholder="name@example.com" />
+                    <label asp-for="Input.Email" htmlFor="Input.Email">Email</label>
                     <span asp-validation-for="Input.Email" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.Password">Password</label>
+                    <input asp-for="Input.Password" class="form-control" autocomplete="off" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password" htmlFor="Input.Password">Password</label>
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                    <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                    <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="off" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.ConfirmPassword" htmlFor="Input.ConfirmPassword">Confirm Password</label>
                     <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
                 </div>
                 <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
