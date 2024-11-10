@@ -9,7 +9,7 @@
 <form asp-controller="Review" asp-action="Create" method="post">
     <div class="form-group">
         <input type="hidden" asp-for="MovieId" value="@ViewBag.MovieId" />
-        <label asp-for="Content" class="control-label"></label>
+        <label asp-for="Content" htmlFor="Content" class="control-label"></label>
         <input asp-for="Content" class="form-control" />
         <span asp-validation-for="Content" class="text-danger"></span>
     </div>
